@@ -1,4 +1,4 @@
-//first base
+//funtion readline which allows reading of input stream line by line
 
 const readline = require('readline');
 
@@ -7,7 +7,7 @@ const rl = readline.createInterface({
   output: process.stdout
 });
 
-//Get input of basic salary and benefits
+//Geting input of basic salary and benefits
 
 function getBasicSalaryAndBenefits() {
   rl.question('Enter Basic Salary: ', (firstValue) => {
@@ -23,7 +23,7 @@ function getBasicSalaryAndBenefits() {
       console.log(`NHIF: ${deductNHIF()}`)
       console.log(`NSSF: ${deductNSSF()}`)
 
-      // Close the readline interface
+      // Closing the readline interface
       rl.close();
     });
   });
@@ -32,7 +32,7 @@ function getBasicSalaryAndBenefits() {
 // Call the function to start getting two values from the user
 getBasicSalaryAndBenefits();
 
-//Calculate how much KRA will deduct
+//Calculates how much KRA will deduct
 function deductPayeeKRA(){
     let taxRate;
 
@@ -57,7 +57,7 @@ function deductPayeeKRA(){
 
 }
 
-//Calculate how much NHIF will deduct
+//Calculates how much NHIF will deduct.
 function deductNHIF(){
     let deduct;
 

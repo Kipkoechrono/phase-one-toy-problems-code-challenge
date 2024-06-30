@@ -23,7 +23,7 @@ To run the Grade Calculator, follow these steps:
 
 - Save the code to a file named `student-Grade-Generator.js.`
 - Open your terminal.
-- Navigate to the directory where you saved grade.js.
+- Navigate to the directory where you saved student-grade-generator.js.
 - Run the command node grade.js.
 - When prompted, enter the student's marks (0-100) and press Enter.
 The program will then display the grade based on the marks you've entered.
