@@ -1,4 +1,4 @@
-//funtion readline which allows reading of input stream line by line
+//readline which displays input line by line 
 
 const readline = require('readline');
 
@@ -7,14 +7,15 @@ const rl = readline.createInterface({
   output: process.stdout
 });
 
-//Geting input of basic salary and benefits
+//Geting input of basic salary and the benefits
 
 function getBasicSalaryAndBenefits() {
   rl.question('Enter Basic Salary: ', (firstValue) => {
     rl.question('Enter Total Benefits: ', (secondValue) => {
-      // Once both values are entered, you can use them as needed
-      
+
+      // you can use the values as needed once the are entered 
       //output gross salary and net salary
+
       grossSalary=calculateGrossSalary(firstValue,secondValue);
       console.log(`Gross Salary: ${grossSalary}`)
       netSalary= calculateNetSalary();
@@ -23,13 +24,13 @@ function getBasicSalaryAndBenefits() {
       console.log(`NHIF: ${deductNHIF()}`)
       console.log(`NSSF: ${deductNSSF()}`)
 
-      // Closing the readline interface
+      // closing 
       rl.close();
     });
   });
 }
 
-// Call the function to start getting two values from the user
+// Call the function
 getBasicSalaryAndBenefits();
 
 //Calculates how much KRA will deduct
@@ -56,6 +57,7 @@ function deductPayeeKRA(){
     return taxRate;
 
 }
+//using swtich case for since there are many repetitions
 
 //Calculates how much NHIF will deduct.
 function deductNHIF(){
@@ -139,4 +141,5 @@ function calculateNetSalary(){
     netSalary=grossSalary-totalDeductions;
 
     return netSalary;
+    //returns final value
 }

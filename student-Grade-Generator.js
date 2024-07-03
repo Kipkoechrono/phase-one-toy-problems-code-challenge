@@ -1,9 +1,12 @@
-const readline = require('readline');
+// Function to determine the grade
 
 function getStudentGrade(marks) {
+    // Check if the marks are in range
     if (marks < 0 || marks > 100) {
         return "Please enter a valid mark between 0 and 100.";
     } else {
+        // Determine the grade based on the the marks 
+        
         if (marks > 79) {
             return "The grade is: A";
         } else if (marks >= 60) {
@@ -18,17 +21,24 @@ function getStudentGrade(marks) {
     }
 }
 
-const rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout
-});
+// Prompt the user to enter the student marks
+process.stdout.write('Enter student marks (0 to 100): ');
 
-rl.question('Enter student marks (0 to 100): ', (input) => {
-    const marks = parseFloat(input);
+// Event listener for user input
+process.stdin.on('data', function(data) {
+    const input = data.toString().trim(); 
+    const marks = parseFloat(input); 
+
+    // Check if the input is a valid number
     if (isNaN(marks)) {
         console.log("Invalid input. Please enter a numeric value.");
+        process.stdout.write('Enter student marks (0 to 100): '); 
+        // Prompt again
     } else {
+        // Get the grade based on the marks and display it
         console.log(getStudentGrade(marks));
+        process.exit(); 
+        // Exits the process after displaying the grade
     }
-    rl.close();
- });
+});
+
